@@ -3,12 +3,12 @@
 
     <item
         android:id="@+id/menuAsync"
-        android:title="Async Task"
-        android:orderInCategory="100" />
+        android:orderInCategory="100"
+        android:title="Async Task" />
 
     <item
         android:id="@+id/menuThreads"
-        android:title="Threads"
-        android:orderInCategory="200" />
+        android:orderInCategory="200"
+        android:title="Threads" />
 
 </menu>

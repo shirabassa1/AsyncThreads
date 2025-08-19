@@ -3,7 +3,6 @@ package com.example.asyncthreads;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 

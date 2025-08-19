@@ -8,7 +8,6 @@ import android.widget.Button;
 
 public class AsyncActivity extends MasterActivity
 {
-    private static final String TAG = "AsyncActivity";
     public Button btnStart, btnStop;
     private PlaySoundAsyncTask playSoundTask;
 

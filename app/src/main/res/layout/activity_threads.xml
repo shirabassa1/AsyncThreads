@@ -5,37 +5,37 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.asyncthreads.ThreadsActivity"
     android:gravity="center"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    tools:context="com.example.asyncthreads.ThreadsActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
         android:text="Threads"
-        android:textSize="40dp"
-        android:layout_marginRight="30dp"/>
+        android:textSize="40dp" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/btnStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
             android:text="START"
-            android:textSize="40dp"
-            android:layout_marginBottom="20dp"/>
+            android:textSize="40dp" />
 
         <Button
             android:id="@+id/btnStop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="STOP"
-            android:textSize="40dp"/>
+            android:textSize="40dp" />
 
     </LinearLayout>
 

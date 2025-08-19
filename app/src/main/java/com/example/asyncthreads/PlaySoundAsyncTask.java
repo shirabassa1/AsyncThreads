@@ -18,7 +18,6 @@ public class PlaySoundAsyncTask extends AsyncTask<Void, Void, Void>
     public PlaySoundAsyncTask(AsyncActivity context)
     {
         activityRef = new WeakReference<>(context);
-        Log.i(TAG, "AsyncTask created");
     }
 
     @Override
@@ -40,12 +39,10 @@ public class PlaySoundAsyncTask extends AsyncTask<Void, Void, Void>
 
         player.setOnCompletionListener(mp ->
         {
-            Log.i(TAG, "Sound finished");
             isRunning.set(false);
         });
 
         player.start();
-        Log.i(TAG, "Sound started");
 
         while (!isCancelled() && player.isPlaying())
         {

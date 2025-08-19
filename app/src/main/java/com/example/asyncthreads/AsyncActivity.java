@@ -1,5 +1,6 @@
 package com.example.asyncthreads;
 
+import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -47,7 +48,15 @@ public class AsyncActivity extends MasterActivity
             @Override
             public void onClick(View view)
             {
-                stopPlaying();
+                new AlertDialogHandler(AsyncActivity.this,
+                    new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i)
+                        {
+                            stopPlaying();
+                        }
+                    }).show();
             }
         });
     }

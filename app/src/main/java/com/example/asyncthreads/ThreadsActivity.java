@@ -9,7 +9,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class ThreadsActivity extends MenuActivity
+public class ThreadsActivity extends MasterActivity
 {
     @Override
     protected void onCreate(Bundle savedInstanceState)

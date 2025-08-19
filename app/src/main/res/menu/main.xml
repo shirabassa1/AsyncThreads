@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuAsync"
+        android:title="Async Task"
+        android:orderInCategory="100" />
+
+    <item
+        android:id="@+id/menuThreads"
+        android:title="Threads"
+        android:orderInCategory="200" />
+
+</menu>

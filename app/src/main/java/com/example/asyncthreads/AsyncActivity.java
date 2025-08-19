@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class AsyncActivity extends MenuActivity
+public class AsyncActivity extends MasterActivity
 {
     private static final String TAG = "AsyncActivity";
     private Button btnStart, btnStop;

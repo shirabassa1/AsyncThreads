@@ -1,5 +1,6 @@
 package com.example.asyncthreads;
 
+import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -64,7 +65,15 @@ public class ThreadsActivity extends MasterActivity
             @Override
             public void onClick(View view)
             {
-                stopPlaying();
+                new AlertDialogHandler(ThreadsActivity.this,
+                        new DialogInterface.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i)
+                            {
+                                stopPlaying();
+                            }
+                        }).show();
             }
         });
     }

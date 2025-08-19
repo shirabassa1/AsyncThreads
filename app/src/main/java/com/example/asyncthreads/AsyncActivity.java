@@ -1,18 +1,14 @@
 package com.example.asyncthreads;
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class AsyncActivity extends MasterActivity
 {
     private static final String TAG = "AsyncActivity";
-    private Button btnStart, btnStop;
+    public Button btnStart, btnStop;
     private PlaySoundAsyncTask playSoundTask;
 
     @Override
@@ -31,9 +27,32 @@ public class AsyncActivity extends MasterActivity
 
         btnStart.setEnabled(true);
         btnStop.setEnabled(false);
+
+        setButtons();
     }
 
-    public void startPlaying(View view)
+    private void setButtons()
+    {
+        btnStart.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                startPlaying();
+            }
+        });
+
+        btnStop.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                stopPlaying();
+            }
+        });
+    }
+
+    public void startPlaying()
     {
         if ((playSoundTask == null) || (playSoundTask.getStatus() == AsyncTask.Status.FINISHED))
         {
@@ -44,7 +63,7 @@ public class AsyncActivity extends MasterActivity
         }
     }
 
-    public void stopPlaying(View view)
+    public void stopPlaying()
     {
         if (playSoundTask != null)
         {

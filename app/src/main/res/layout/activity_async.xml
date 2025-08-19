@@ -28,16 +28,14 @@
             android:layout_height="wrap_content"
             android:text="START"
             android:textSize="40dp"
-            android:layout_marginBottom="20dp"
-            android:onClick="startPlaying"/>
+            android:layout_marginBottom="20dp"/>
 
         <Button
             android:id="@+id/btnStop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="STOP"
-            android:textSize="40dp"
-            android:onClick="stopPlaying"/>
+            android:textSize="40dp"/>
 
     </LinearLayout>
 

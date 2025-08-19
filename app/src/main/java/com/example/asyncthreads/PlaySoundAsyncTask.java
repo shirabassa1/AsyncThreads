@@ -3,6 +3,7 @@ package com.example.asyncthreads;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Button;
 
 import java.lang.ref.WeakReference;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -46,7 +47,7 @@ public class PlaySoundAsyncTask extends AsyncTask<Void, Void, Void>
         player.start();
         Log.i(TAG, "Sound started");
 
-        while (isRunning.get())
+        while (!isCancelled() && player.isPlaying())
         {
             try
             {
@@ -58,14 +59,24 @@ public class PlaySoundAsyncTask extends AsyncTask<Void, Void, Void>
             }
         }
 
+        if (!player.isPlaying())
+        {
+            activity.runOnUiThread(() ->
+            {
+                activity.btnStart.setEnabled(true);
+                activity.btnStop.setEnabled(false);
+            });
+
+            player.release();
+            player = null;
+        }
+
         return null;
     }
 
     @Override
     protected void onCancelled()
     {
-        isRunning.set(false);
-
         if (player != null)
         {
             if (player.isPlaying())
